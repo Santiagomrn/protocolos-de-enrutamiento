@@ -202,45 +202,76 @@ body {
       <hr class="d-sm-none">
     </div>
     <div class="col-sm-8">
-      <h1>Enhanced Interior Gateway Routing Protocol</h1>
-      <h5>¿Que es EIGRP?</h5>
+      <h1>Routing Information Protocol</h1>
+      <h5>¿Que es RIP?</h5>
 
-      <p>El EIGRP es una versión mejorada de IGRP. La tecnología de vector de igual distancia que se usa en IGRP también se emplea en EIGRP. Además, la información de la distancia subyacente no presenta cambios. Las propiedades de convergencia y la eficacia de operación de este protocolo han mejorado significativamente. Esto permite una arquitectura mejorada y, a la vez, retiene la inversión existente en IGRP.
-
-          La tecnología de convergencia está basada en una investigación realizada en SRI International. El algoritmo difusor de actualización (DUAL) es el algoritmo usado para obtener la loop-libertad en cada instante en un cómputo de la ruta. Esto les permite a todos los routers involucrados en una topología cambiar para sincronizarse al mismo tiempo. Los routers que no se ven afectados por los cambios de topología no se incluyen en el recálculo. El tiempo de convergencia con DUAL compite con el de cualquier otro protocolo de ruteo existente.
-          
-          EIGRP ha sido extendido para que sea independiente del protocolo de la capa de red, y así permita que DUAL soporte otros conjuntos de protocolos. </p>
+      <p>RIP es un protocolo importante por ser uno de los primeros en
+        implementarse y servir de base para la evolucioÓn de los
+        protocolos de enrutamiento dinámico. Entre sus características
+        baásicas habría que destacar las siguientes: </p>
       <br>
-      <p>Más información detrás de la imagen</p>
-
-      <div class="flip-box">
-        <div class="flip-box-inner">
-          <div class="flip-box-front">
-            <img src="img/2.png" alt="Avatar" class="image" >
-          </div>
-          <div class="flip-box-back">
-            <h2>Características</h2>
-            <p  >EIGRP se basa en el principio clave del protocolo de routing vector distancia, según el cual la información acerca del resto de la red se obtiene a partir de vecinos conectados directamente.</p>
-            <ol type=”A”>
-              <li>Algoritmo de actualización difusa </li>
-              <li>Establecimiento de adyacencias de vecinos </li>
-              <li>Protocolo de transporte confiable </li>
-              <li>Actualizaciones parciales y limitadas </li>
-              <li>Balanceo de carga de mismo costo o con distinto costo</li>
+        <div >
+         
+            <h2>características</h2>
+            <ol  style="list-style-type:circle; color:white;">
+              <li>Descubrir redes lejanas con las que intercambiar
+                  información. </li>
+              <li>Es un protocolo de enrutamiento vector distancia. </li>
+              <li>Utiliza el conteo de saltos como su unica metrica o coste
+                para la seleccion de rutas.</li>
+              <li>Las rutas publicadas con conteo de saltos mayores que 15
+                son inalcanzables.</li>
+              <li>
+                Se transmiten mensajes cada 30 segundos.
+              </li>
+              <li>
+                Sus mensajes se encapsulan en un segmento UDP con
+                direcciones de puerto 520 tanto en origen como en destino.
+              </li>
+              <li>
+                Tiene asignada una distancia administrativa de 120.
+              </li>
             </ol>
 
-
-            
-          </div>
         </div>
-      </div> 
-
       <br>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <h2>Información</h2>
+       <p>En su primera versión (RIPv1) es un protocolo con clase, es
+        decir, considera las direcciones de red como pertenecientes a
+        una de las clases definidas por el estándar (clases A, B y C),
+        por lo que no admite VLSM (máscaras de subred de longitud
+        variable) ni la notación CIDR para estas (enrutamiento entre
+        dominios sin clases). La versión mejorada de este protocolo
+        (RIPv2) admite tanto VLSM y CIDR, por lo que ya no se
+        asocia cada dirección de red con la máscara de la clase a la que
+        pertenece.</p>
+        <br>
+        <h2>Ventajas de RIP</h2>
+        <p>
+          RIP es más fácil de configurar (comparativamente a otros
+          protocolos). Es un protocolo abierto (admite versiones
+          derivadas aunque no necesariamente compatibles).
+          Es soportado por la mayoría de los fabricantes.
+        </p>
+        <br>
+        <h2>Desventajas de RIP</h2>
+        <p>
+          Su principal desventaja consiste en que para determinar la
+          mejor métrica, únicamente toma en cuenta el número de saltos,
+          descartando otros criterios (Ancho de Banda, congestión,
+          carga, retardo, abilidad, etc.).
+          RIP tampoco está diseñado para resolver cualquier posible
+          problema de enrutamiento. El RFC 1720 (STD 1) describe
+          estas limitaciones técnicas de RIP como graves y el IETF
+          está evaluando candidatos para reemplazarlo, dentro de los
+          cuales OSPF es el favorito. Este cambio está dificultado por la
+          amplia expansión de RIP y necesidad de acuerdos adecuados.
+        </p>
+
     </div>
   </div>
 </div>
+
 
 
 
