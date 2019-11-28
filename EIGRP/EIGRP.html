@@ -138,6 +138,11 @@ body {
  
 }
 
+#punto{
+  color: white;
+ 
+}
+
 
   </style>
 </head>
@@ -164,7 +169,7 @@ body {
           <a class="nav-link" href="EIGRP.html">EIGRP</a>
         </li>  
         <li class="nav-item">
-          <a class="nav-link" href="../CREDITOS/CREDITOS.html"">Créditos</a>
+          <a class="nav-link" href="../CREDITOS/CREDITOS.html">Créditos</a>
         </li>   
       </ul>
     </div>  
@@ -182,24 +187,29 @@ body {
         </div>
       </div>
       <br><br><br>
-      <p>Referencias de Investiagación</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item "   >
-          <a class="nav-link " href="#">LIBRO UNO</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">LIBRO DOS</a>
-        </li>
-        <li class="nav-item" style="background-color: #ffffff56!important">
-          <a class="nav-link" href="#">Créditos</a>
-        </li>
-        <li class="nav-item">
-            <BR></BR>
-          <video width="350" controls>
-            <source src="https://www.youtube.com/watch?v=1qF8lbt_Vvc" type="video/mp4">
-          </video>
-        </li>
-      </ul>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="background-color: #00000000!important">
+  
+
+        <div  class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item" >
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item"  >
+              <a class="nav-link" href="../RIP/RIP.html">RIP</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../OSPF/OSPF.html">OSPF</a>
+            </li>
+            <li class="nav-item" id="active">
+              <a class="nav-link" href="../EIGRP/EIGRP.html">EIGRP</a>
+            </li>  
+            <li class="nav-item" >
+              <a class="nav-link" href="../CREDITOS/CREDITOS.html"">Créditos</a>
+            </li>   
+          </ul>
+        </div>  
+      </nav>
       <hr class="d-sm-none">
     </div>
     <div class="col-sm-8">
@@ -237,8 +247,27 @@ body {
       </div> 
 
       <br>
-      <p>Some text..</p>
-      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      <h2>Conceptos EIGRP</h2>
+      <ol>
+        <li id="punto">Tabla de Vecino</li>
+        <p>Cada router conserva información de estado de los vecinos adyacentes. Cuando se reconoce a los vecinos recientemente detectados, se registra la dirección y la interfaz del vecino. Esta información está almacenada en la estructura de datos del vecino. La tabla de vecino contiene estas entradas. Hay una tabla de vecino para cada módulo dependiente del protocolo. Cuando un vecino envía un saludo, anuncia un tiempo de espera. HoldTime es la cantidad de tiempo que un router considera a un vecino como alcanzable y en funcionamiento. Es decir si un paquete de saludo no se oye dentro del holdtime, después del holdtime expira. Cuando la retención de tiempo caduca, se informa a DUAL sobre el cambio en la topología. </p>
+        <li id="punto">Tabla de topología </li>
+        <p>La Tabla de tipologías se completa mediante los módulos dependientes del protocolo y la máquina de estados finitos DUAL la pone en práctica. Contiene todos los destinos anunciados por los routers vecinos. Con cada entrada, está asociada la dirección de destino y una lista de vecinos que han anunciado el destino. Para cada vecino, se registra la métrica anunciada. Esta es la métrica que el vecino almacena en su tabla de ruteo. Si el vecino avisa este destino, debe estar utilizando la ruta para reenviar paquetes. Ésta es una regla importante que deben cumplir los protocolos del vector de distancia. </p>
+        <li id="punto">Sucesores factibles</li>
+        <p>Una entrada de destino se mueve desde la tabla de topología hasta la tabla de ruteo cuando existe un sucesor posible. Todos los trayectos de costo mínimo para un destino forman un conjunto. A partir de esto, los vecinos que tienen una medición anunciada menor que la medición de tabla de ruteo actual son considerados sucesores factibles. </p>
+        <li id="punto">Estados de ruta</li>
+        <p>Una entrada de la tabla de topología para un destino puede tener uno de dos estados. Una ruta se considera en el estado pasivo cuando un router no está realizando un recomputation de la ruta. La ruta está en el estado activo cuando un router está experimentando un recomputation de la ruta. Si siempre hay sucesores factibles, una ruta nunca tiene que ingresar a estado activo y evitar un recálculo de la ruta.</p>
+        <li id="punto">Formatos de paquetes</li>
+        <ol type=”A”>
+          <li  id="punto">Hola/acks </li>
+          <li  id="punto">Actualizaciones</li>
+          <li  id="punto">Consultas</li>
+          <li  id="punto">Contestaciones</li>
+          <li  id="punto">Solicitudes</li>
+        </ol>
+        <li id="punto">Marcado de rutas</li>
+        <p>EIGRP tiene la noción de rutas internas y externas. Rutas internas son aquellas que se originaron dentro de un sistema autónomo (AS) EIGRP. Por lo tanto, una red conectada en forma directa y configurada para ejecutar EIGRP se considera una ruta interna y se propaga junto con esta información a través del AS EIGRP. Las rutas externo son unas que han sido aprendidas por otro Routing Protocol o residen en la tabla de ruteo como Static rutas. Estas rutas son etiquetadas individualmente con la identidad de su origen. </p>
+      </ol>
     </div>
   </div>
 </div>
